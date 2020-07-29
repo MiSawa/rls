@@ -11,7 +11,7 @@ extern crate rls_span as span;
 mod analysis;
 mod listings;
 mod loader;
-mod lowering;
+pub mod lowering;
 mod raw;
 mod symbol_query;
 #[cfg(test)]
@@ -465,7 +465,7 @@ impl<L: AnalysisLoader> AnalysisHost<L> {
         })
     }
 
-    fn with_analysis<F, T>(&self, f: F) -> AResult<T>
+    pub fn with_analysis<F, T>(&self, f: F) -> AResult<T>
     where
         F: FnOnce(&Analysis) -> Option<T>,
     {

@@ -67,7 +67,7 @@ where
     Ok(())
 }
 
-fn lower_span(raw_span: &raw::SpanData, base_dir: &Path, path_rewrite: &Option<PathBuf>) -> Span {
+pub fn lower_span(raw_span: &raw::SpanData, base_dir: &Path, path_rewrite: &Option<PathBuf>) -> Span {
     let file_name = &raw_span.file_name;
 
     // Go from relative to absolute paths.
